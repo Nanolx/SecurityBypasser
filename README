@@ -1,0 +1,16 @@
+Miitomo Security Bypasser (Xposed Module)
+
+Instructions:
+- install Xposed Framework
+- install Miitomo Security Bypasser
+- activate Miitomo Security Bypasser in Xposed Installer
+- reboot device
+- enjoy Miitomo
+
+Version Information:
+1.0.0 - 1.0.2:	ChrisJosten (@ChristJosten on XDA)
+	- intial versions and update for Miitomo <= 1.1.3
+1.0.3:		legendt (@legendt on XDA)
+	- update for Miitomo 1.2.0 - 1.2.2
+1.0.4:		Nanolx (@setialpha on XDA)
+	- hook into logcat for Miitomo 1.2.0 - 1.2.2
