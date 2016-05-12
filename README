@@ -17,6 +17,6 @@ Version	short description			for Miitomo Version
 
 1.0.3	update (@legendt)			1.2.0 - 1.2.2
 
-1.0.4	hook into logcat (@setialpha)		1.2.0 - 1.2.2
+1.0.4	hook into logcat (Nanolx)		1.2.0 - 1.2.2
 1.0.5	improve build, fix Xposed illegal	1.2.0 - 1.2.2
-	access issues for some users
+	access issues for some users (Nanolx)
