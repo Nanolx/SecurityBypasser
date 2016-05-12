@@ -11,12 +11,23 @@ Version Information:
 
 Version	short description			for Miitomo Version
 
+@ChrisJosten
 1.0.0:	initial Version (@ChrisJosten)		up to 1.1.3
 1.0.1:	bugfix release (@ChrisJosten)		up to 1.1.3
 1.0.2:	bugfix release (@ChristJosten)		up to 1.1.3
 
+@legendt
 1.0.3	update (@legendt)			1.2.0 - 1.2.2
 
+@Nanolx
 1.0.4	hook into logcat (Nanolx)		1.2.0 - 1.2.2
-1.0.5	improve build, fix Xposed illegal	1.2.0 - 1.2.2
-	access issues for some users (Nanolx)
+-----
+1.0.5	- improve build				1.2.0 - 1.2.2
+	- fix Xposed illegal access issues for some users (Nanolx)
+-----
+1.0.6	- new icon (thanks @nonsensninja)	1.2.0 - 1.2.2
+	- remove unused stuff from git repo
+	- minor changes to build process
+	- change ID to org.nanolx.miitomosecuritybypasser
+	- more description
+	- add module to Xposed Repository
