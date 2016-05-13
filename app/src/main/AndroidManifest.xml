@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="org.nanolx.miitomosecuritybypasser" >
+    package="org.nanolx.securitybypasser" >
 
     <application
         android:allowBackup="true"
@@ -14,11 +14,10 @@
 
 		<meta-data
 			android:name="xposeddescription"
-			android:value="Nintedo's first mobile application (Miitomo)
-does several checks to prevent unauthorized usage of the app. While this might be
-understandable, Nintendo, respectively Dena, does it in a way that locks out legit
-users from Miitomo. This module hooks into Miitomo's security functions and ensures
-your device is seen as a legit device." />
+			android:value="Security Bypasser for Nintendo and others.
+Supports:
+- Miitomo
+- Yokai Watch Wibble Wobble (US)"/>
 
 		<meta-data
 			android:name="xposedminversion"
