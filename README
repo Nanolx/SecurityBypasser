@@ -1,4 +1,5 @@
 Nanolx Security Bypasser (Xposed Module)
+==============================================================
 
 Instructions:
 - install Xposed Framework
@@ -7,9 +8,10 @@ Instructions:
 - reboot device
 - enjoy Miitomo
   - additional steps needed for Yokai Watch Wibble Wobble
+==============================================================
 
 Version Information
-===================
+==============================================================
 
 Version	short description			for Miitomo Version
 
@@ -38,8 +40,10 @@ Version	short description			for Miitomo Version
 	- change ID to org.nanolx.securitybypasser
 	- add support for Yokai Watch Wibble Wobble (US)
 	- add libSGF delta patches for Yokai Watch Wibble Wobble
+==============================================================
 
 Getting Yokai Watch Wibble Wobble (US) to work on rooted phone
+==============================================================
 
 Supporting YWWWUS was a rather hard task and consists of two parts:
 
