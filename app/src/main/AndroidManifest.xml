@@ -16,8 +16,9 @@
 			android:name="xposeddescription"
 			android:value="Security Bypasser for Nintendo and others.
 Supports:
-- Miitomo
-- Yokai Watch Wibble Wobble (US)"/>
+ Miitomo,
+ Yokai Watch Wibble Wobble (US),
+ Pokemon Jukebox"/>
 
 		<meta-data
 			android:name="xposedminversion"

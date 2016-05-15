@@ -40,6 +40,12 @@ Version	short description			for Miitomo Version
 	- change ID to org.nanolx.securitybypasser
 	- add support for Yokai Watch Wibble Wobble (US)
 	- add libSGF delta patches for Yokai Watch Wibble Wobble
+-----
+1.0.8	- minor internal changes
+	- add support for Pokemon Jukebox
+	- fix running Miitomo on Emulator [untested]
+	- fix running Yokai Watch Wibble Wobble (US) on Emulator [untested]
+	- minor coding improvements for YWWWUS
 ==============================================================
 
 Getting Yokai Watch Wibble Wobble (US) to work on rooted phone
@@ -51,12 +57,12 @@ Supporting YWWWUS was a rather hard task and consists of two parts:
  - modified libSGF: the hard one, we need to remove all references to "su"
 		    from the libSGF library
 
-How to modify the lib, there are three ways. But before: download the YWWWUS
+To modify the libray there are three ways. But first download the YWWWUS
 apk file and extract it using apktool.
 
 You'll find the libraries in
 
-	<apkfilename>/lib/<architecture/libSGF.so
+	<apkfilename>/lib/<architecture>/libSGF.so
 
 a) using xdelta patches. in the directory delta/com.level5.ywwwus you'll find
    xdelta patches to be applied like:
@@ -78,18 +84,18 @@ a) using xdelta patches. in the directory delta/com.level5.ywwwus you'll find
 b) command line editor, like Vim or Emacs. simply open the library and search for
    all instances of "su" and replace with the two letters with something different
    like "st". BUT: you must not change the length of the string, else you'll
-   destroy the library. Also don't change anything that where "su" is just part
-   of another word like "result" or whatever (that should be obvious, but still).
+   destroy the library. Also don't change anything where "su" is just part of
+   another word like "result" or whatever (that should be obvious, but still).
 
 c) hex editor. Open the library in a hex editor and change the hexcodes for all
    instances of "su" and replace with the two letters with something different
    like "st". BUT: you must not change the length of the string, else you'll
-   destroy the library. Also don't change anything that where "su" is just part
-   of another word like "result" or whatever (that should be obvious, but still).
+   destroy the library. Also don't change anything where "su" is just part of
+   another word like "result" or whatever (that should be obvious, but still).
 
 Once you successfully modified the library use it to replace the original one in
 
-	<apkfilename>/lib/<architecture/libSGF.so
+	<apkfilename>/lib/<architecture>/libSGF.so
 
 rebuild the apk file using apktool
 
@@ -101,7 +107,7 @@ open the new apk located in
 
 with a zip program and copy the
 
-	META-INF
+	META-INF/
 
 folder from
 
