@@ -1,13 +1,23 @@
 Nanolx Security Bypasser (Xposed Module)
 ==============================================================
 
-Instructions:
+Nanolx Security Bypasser helps you get your games with anti-root
+checks run normally on your rooted devices.
+
+It supports the following games:
+  - Miitomo (since version 1.0.0)
+  - Yokai Watch Wibble Wobble (US) (since version 1.0.7)
+	- requires additional steps, see below
+  - Pokemon Jukebox (since Version 1.0.8)
+	- service stops for purchases on 30th May 2016
+	- service stops for re-downloads 30th June 2016
+
+Basic Instructions:
 - install Xposed Framework
 - install Nanolx Security Bypasser
 - activate Nanolx Security Bypasser in Xposed Installer
 - reboot device
-- enjoy Miitomo
-  - additional steps needed for Yokai Watch Wibble Wobble
+- enjoy your Game
 ==============================================================
 
 Version Information
