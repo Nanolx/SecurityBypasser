@@ -17,7 +17,11 @@ public class XposedEntryPoint implements IXposedHookLoadPackage
 	@Override
 	public void handleLoadPackage(LoadPackageParam param) throws Throwable
 	{
-						// Miitomo
+		/*
+		* =======
+		*   Miitomo
+		* ========
+		*/
 		if (param.packageName.equalsIgnoreCase("com.nintendo.zaaa"))
 		{
 
@@ -129,7 +133,11 @@ public class XposedEntryPoint implements IXposedHookLoadPackage
 				});
 
 		}
-						// Yokai Watch Wibble Wobble (US)
+		/*
+		* =======
+		*   Yokai Watch Wibble Wobble
+		* ========
+		*/
 		else if (param.packageName.equalsIgnoreCase("com.level5.ywwwus"))
 		{
 
@@ -179,7 +187,11 @@ public class XposedEntryPoint implements IXposedHookLoadPackage
 				});
 
 		}
-							// Pokemon Jukebox
+		/*
+		* =======
+		*   Pokemon Jukebox
+		* ========
+		*/
 		else if (param.packageName.equalsIgnoreCase("jp.pokemon.music"))
 		{
 
@@ -209,4 +221,3 @@ public class XposedEntryPoint implements IXposedHookLoadPackage
 	}
 
 }
-
