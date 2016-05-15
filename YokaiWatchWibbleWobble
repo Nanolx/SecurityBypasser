@@ -5,12 +5,33 @@ and consists of two parts:
  - modified libSGF: the hard one, we need to remove all references to "su"
 		    from the libSGF library
 
-To modify the libray there are three ways. But first download the YWWWUS
-apk file and extract it using apktool.
+==== Automated modification of the libSGF library (Linux only) ====
 
-You'll find the libraries in
+First download the YWWWUS apk file.
+
+Using automated patcher: in the directory patcher you'll find the script
+
+	yokai-patcher.sh
+
+execute it and give the name of the apk file as argument, for example
+
+	./patcher/yokai-patcher.sh /home/user/YokaiWatchWibbleWobbleUS.apk
+
+you need to have xdelta and zip installed. If everything goes fine, the script
+will tell you that it succeeded and where the new Yokai-Root.apk is stored.
+
+Copy this apk to your device and install it (or install using adb).
+
+==== Manual Methods (all operating systems) ====
+
+To modify the libray there are three ways. But first download the YWWWUS
+apk file and extract it,  you'll find the library in
 
 	<apkfilename>/lib/<architecture>/libSGF.so
+
+If you encounter issues with apktool, try the supplied one the patcher directory.
+
+Now proceed with one of the following a), b) or c).
 
 a) using xdelta patches. in the directory delta/com.level5.ywwwus you'll find
    xdelta patches to be applied like:
@@ -30,13 +51,13 @@ a) using xdelta patches. in the directory delta/com.level5.ywwwus you'll find
 	xdelta libSGF-x86.delta libSGF.so libSGF-mod.so
 
 b) command line editor, like Vim or Emacs. simply open the library and search for
-   all instances of "su" and replace with the two letters with something different
+   all instances of "su" and replace the two letters with something different
    like "st". BUT: you must not change the length of the string, else you'll
    destroy the library. Also don't change anything where "su" is just part of
    another word like "result" or whatever (that should be obvious, but still).
 
 c) hex editor. Open the library in a hex editor and change the hexcodes for all
-   instances of "su" and replace with the two letters with something different
+   instances of "su" and replace the two letters with something different
    like "st". BUT: you must not change the length of the string, else you'll
    destroy the library. Also don't change anything where "su" is just part of
    another word like "result" or whatever (that should be obvious, but still).
