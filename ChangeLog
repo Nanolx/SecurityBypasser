@@ -3,8 +3,8 @@ Version	- changes
 @Nanolx
 1.0.8	- minor internal changes
 	- add support for Pokemon Jukebox
-	- fix running Miitomo on Emulator [untested]
-	- fix running Yokai Watch Wibble Wobble (US) on Emulator [untested]
+	- fix running Miitomo on Emulator
+	- fix running Yokai Watch Wibble Wobble (US) on Emulator
 	- minor coding improvements for Yokai Watch Wibble Wobble (US)
 -----
 1.0.7	- minor string fix
