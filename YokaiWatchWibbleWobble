@@ -33,7 +33,7 @@ If you encounter issues with apktool, try the supplied one the patcher directory
 
 Now proceed with one of the following a), b) or c).
 
-a) using xdelta patches. in the directory delta/com.level5.ywwwus you'll find
+a) using xdelta patches. in the directory patcher/delta/com.level5.ywwwus you'll find
    xdelta patches to be applied like:
 
 	xdelta <delta-patch>  <original-lib> <modified-lib>
