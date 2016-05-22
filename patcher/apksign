@@ -10,8 +10,4 @@ _error () {
 
 if [[ -f ${1} && ${1} == *.apk ]]; then
 	java -jar ${basedir}/apksign.jar "${1}" || _error "apksign.jar failed!"
-	tmp=$(basename "${1}" .apk)
-	pmt=$(dirname "${1}")
-	echo "signed apk saved as:	${pmt}/${tmp}.s.apk"
-else	echo "usage: apksign <apkfile>"
 fi
