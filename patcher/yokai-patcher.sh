@@ -20,7 +20,6 @@ _build () {
 
 		which xdelta &>/dev/null || _error "xdelta not installed!"
 		xdelta=$(which xdelta)
-		apktool=${basedir}/apktool
 
 		source="${1}"
 		sourceapk=$(basename "${source}")
@@ -64,10 +63,14 @@ if your device is connected to your computer.
 
 case ${1} in
 
-	*alt )	apktoolparams="-p ${basedir}/framework"
+	*alt )	apktool=${basedir}/apktool
+		apktoolparams="-p ${basedir}/framework"
 		build "${1}"	;;
 
-	*.apk )	build "${1}"	;;
+	*.apk )	which apktool &>/dev/null || _error "apktool not installed!"
+		apktool=$(which apktool)
+		apktoolparams=""
+		build "${1}"	;;
 
 	* )	echo -e "Yokai Watch Wibble Wobble (US) root patcher
 
@@ -77,7 +80,7 @@ usage:
 	patcher.sh --alt <yokaiwatch.apk>
 
 option:
-	--alt	[use alternative framework for apktool]
+	--alt	[use alternative framework and apktool]
 	--help	[show this message]
 "	;;
 
