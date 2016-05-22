@@ -1,5 +1,8 @@
 #!/bin/bash
 
+version=1.1.0
+reldate=2016/05/22
+
 basedir=$(readlink -m "${BASH_SOURCE[0]}")
 basedir=$(dirname ${basedir})
 rootdir="${PWD}"
@@ -9,54 +12,73 @@ _error () {
 	exit 1
 }
 
-if [[ -f ${1} && ${1} == *.apk ]]; then
+_build () {
 
-	rm -rf ${rootdir}/build-yokai
+	if [[ -f ${1} && ${1} == *.apk ]]; then
 
-	which xdelta &>/dev/null || _error "xdelta not installed!"
-	xdelta=$(which xdelta)
-	apktool=${basedir}/apktool
+		rm -rf ${rootdir}/build-yokai
 
-	source="${1}"
-	sourceapk=$(basename "${source}")
-	sourcedir=$(basename "${source}" .apk)
+		which xdelta &>/dev/null || _error "xdelta not installed!"
+		xdelta=$(which xdelta)
+		apktool=${basedir}/apktool
 
-	mkdir ${rootdir}/build-yokai
-	cp "${source}" ${rootdir}/build-yokai
-	cd ${rootdir}/build-yokai
-	${apktool} -p "${basedir}/framework" \
-		d "${sourceapk}" || _error "apktool failed!"
+		source="${1}"
+		sourceapk=$(basename "${source}")
+		sourcedir=$(basename "${source}" .apk)
 
-	for arch in armeabi armeabi-v7a x86; do
-		${xdelta} patch "${basedir}"/delta/com.level5.ywwwus/libSGF-${arch}.delta \
-			"${sourcedir}"/lib/${arch}/libSGF.so libSGF-mod.so || _error "xdelta failed!"
+		mkdir ${rootdir}/build-yokai
+		cp "${source}" ${rootdir}/build-yokai
+		cd ${rootdir}/build-yokai
+		${apktool} ${apktoolparams} \
+			d "${sourceapk}" || _error "apktool failed!"
 
-		mv libSGF-mod.so "${sourcedir}"/lib/${arch}/libSGF.so
-	done
+		for arch in armeabi armeabi-v7a x86; do
+			${xdelta} patch "${basedir}"/delta/com.level5.ywwwus/libSGF-${arch}.delta \
+				"${sourcedir}"/lib/${arch}/libSGF.so libSGF-mod.so || _error "xdelta failed!"
 
-	${apktool} -p "${basedir}/framework" \
-		b "${sourcedir}" \
-		-o Yokai-Root.apk || _error "apktool failed!"
+			mv libSGF-mod.so "${sourcedir}"/lib/${arch}/libSGF.so
+		done
 
-	cp -r "${sourcedir}/original/META-INF" .
-	zip -r Yokai-Root.apk META-INF/ || _error "zip failed!"
+		${apktool} ${apktoolparams} \
+			b "${sourcedir}" \
+			-o Yokai-Root.apk || _error "apktool failed!"
 
-	echo -e "
+		cp -r "${sourcedir}/original/META-INF" .
+		zip -r Yokai-Root.apk META-INF/ || _error "zip failed!"
+
+		echo -e "
 Modified apk stored as
 
 		${rootdir}/build-yokai/Yokai-Root.apk
 
 copy to your device and install or issue
 
-		adb install -r ${rootdir}/build-yokai/Yokai-Root.apk
+		adb install [-r] ${rootdir}/build-yokai/Yokai-Root.apk
 
 if your device is connected to your computer.
 "
+	else	_error "file ${1} does not exist."
+	fi
 
-else
-	echo -e "Yokai Watch Wibble Wobble (US) patcher
+}
 
-exec: patcher.sh <yokaiwatch.apk>
+case ${1} in
 
-will give you Yokai-Root.apk if going well."
-fi
+	*alt )	apktoolparams="-p ${basedir}/framework"
+		build "${1}"	;;
+
+	*.apk )	build "${1}"	;;
+
+	* )	echo -e "Yokai Watch Wibble Wobble (US) root patcher
+
+version ${version} (${reldate})
+usage:
+	patcher.sh <yokaiwatch.apk>
+	patcher.sh --alt <yokaiwatch.apk>
+
+option:
+	--alt	[use alternative framework for apktool]
+	--help	[show this message]
+"	;;
+
+esac
