@@ -85,8 +85,8 @@ case ${1} in
 
 version ${version} (${reldate})
 usage:
-	patcher.sh <yokaiwatch.apk>
-	patcher.sh --alt <yokaiwatch.apk>
+	yokai-patcher.sh <yokaiwatch.apk>
+	yokai-patcher.sh --alt <yokaiwatch.apk>
 
 option:
 	--alt	[use supplied apktool with supplied framework]
