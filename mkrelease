@@ -1,0 +1,81 @@
+#!/bin/bash
+
+basedir=$(readlink -m ${BASH_SOURCE[0]})
+basedir=$(dirname ${basedir})
+
+version=1.0
+reldate=2016/05/22
+
+build_opt=${basedir}/app/build.gradle
+build_apk=${basedir}/app/build/outputs/apk/app-release-unsigned.apk
+build_spk=${basedir}/app/build/outputs/apk/app-release-unsigned.s.apk
+
+_error () {
+	echo "${1}"
+	exit 1
+}
+
+_bump_version () {
+
+	tmp=$(gawk '/versionCode/{print $2}' ${build_opt})
+	versionCode=$((tmp+1))
+
+	versionName=${1}
+
+	sed -e "s/versionCode .*/versionCode ${versionCode}/g" -i ${build_opt}
+	sed -e "s/versionName .*/versionName ${versionName}/g" -i ${build_opt}
+
+}
+
+_build_apk () {
+	gradle build || _error "building Security Bypasser failed!"
+}
+
+_sign_apk () {
+	if [[ ! -f ${build_apk} ]]; then
+		_error "run mkrelease --build first!"
+	else	${basedir}/patcher/apksign ${build_apk} || _error "signing Security Bypasser failed!"
+		cp ${build_spk} ${basedir}/SecurityBypasser-latest.apk
+	fi
+}
+
+_clean () {
+	gradle clean || _error "cleaning up build directory failed!"
+	rm -rf ${basedir}/build
+}
+
+case ${1} in
+	*version)
+		_bump_version ${1}
+	;;
+
+	*build)
+		_build_apk
+		_sign_apk
+		_clean
+		echo "new apk is:	${basedir}/SecurityBypasser-latest.apk"
+	;;
+
+	*sign)
+		_sign_apk
+	;;
+
+	*clean)
+		_clean
+	;;
+
+	*)
+		echo -e "Nanolx Security Bypasser mkrelease
+
+version ${version} (${reldate})
+usage:
+	mkrelease <option> <param
+
+option:
+	version	<versionName>	[increase versionCode by 1, set versionName]
+	build			[build and sign Security Bypasser apk]
+	sign			[sign Security Bypasser apk]
+	clean			[cleanup build directory]
+	help			[show this message]"
+	;;
+esac
