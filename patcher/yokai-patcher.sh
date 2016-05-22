@@ -1,6 +1,6 @@
 #!/bin/bash
 
-version=1.1.0
+version=1.1.1
 reldate=2016/05/22
 
 basedir=$(readlink -m "${BASH_SOURCE[0]}")
@@ -65,16 +65,16 @@ case ${1} in
 
 	*alt )	apktool=${basedir}/apktool
 		apktoolparams="-p ${basedir}/framework"
-		build "${1}"	;;
+		_build "${2}"	;;
 
 	*alt2 )	apktool=${basedir}/apktool
 		apktoolparams=""
-		build "${1}"	;;
+		_build "${2}"	;;
 
 	*.apk )	which apktool &>/dev/null || _error "apktool not installed!"
 		apktool=$(which apktool)
 		apktoolparams=""
-		build "${1}"	;;
+		_build "${1}"	;;
 
 	* )	echo -e "Yokai Watch Wibble Wobble (US) root patcher
 
