@@ -67,6 +67,10 @@ case ${1} in
 		apktoolparams="-p ${basedir}/framework"
 		build "${1}"	;;
 
+	*alt2 )	apktool=${basedir}/apktool
+		apktoolparams=""
+		build "${1}"	;;
+
 	*.apk )	which apktool &>/dev/null || _error "apktool not installed!"
 		apktool=$(which apktool)
 		apktoolparams=""
@@ -80,7 +84,8 @@ usage:
 	patcher.sh --alt <yokaiwatch.apk>
 
 option:
-	--alt	[use alternative framework and apktool]
+	--alt	[use supplied apktool with supplied framework]
+	--alt2	[use supplied apktool with default framework]
 	--help	[show this message]
 "	;;
 
