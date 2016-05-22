@@ -11,11 +11,11 @@ First download the YWWWUS apk file.
 
 Using automated patcher: in the directory patcher you'll find the script
 
-	yokai-patcher.sh
+	yokai-patcher
 
 execute it and give the name of the apk file as argument, for example
 
-	./patcher/yokai-patcher.sh /home/user/YokaiWatchWibbleWobbleUS.apk
+	./patcher/yokai-patcher /home/user/YokaiWatchWibbleWobbleUS.apk
 
 you need to have xdelta and zip installed. If everything goes fine, the script
 will tell you that it succeeded and where the new Yokai-Root.apk is stored.
