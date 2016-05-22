@@ -14,8 +14,10 @@ It supports the following games:
 
 Basic Instructions:
 - install Xposed Framework
-- install Nanolx Security Bypasser
-- activate Nanolx Security Bypasser in Xposed Installer
+- install Security Bypasser
+  - download SecurityBypasser-latest.apk from GitHub repository
+  - download Security Bypasser from Xposed repository
+- activate Security Bypasser in Xposed Installer
 - reboot device
 - enjoy your Game
 
