@@ -1,0 +1,17 @@
+#!/bin/bash
+
+basedir=$(readlink -m ${BASH_SOURCE[0]})
+basedir=$(dirname ${basedir})
+
+_error () {
+	echo "${1}"
+	exit 1
+}
+
+if [[ -f ${1} && ${1} == *.apk ]]; then
+	java -jar ${basedir}/apksign.jar "${1}" || _error "apksign.jar failed!"
+	tmp=$(basename "${1}" .apk)
+	pmt=$(dirname "${1}")
+	echo "signed apk saved as:	${pmt}/${tmp}.s.apk"
+else	echo "usage: apksign <apkfile>"
+fi

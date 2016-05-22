@@ -1,6 +1,6 @@
 #!/bin/bash
 
-version=1.1.1
+version=1.2.0
 reldate=2016/05/22
 
 basedir=$(readlink -m "${BASH_SOURCE[0]}")
@@ -25,6 +25,8 @@ _build () {
 		sourceapk=$(basename "${source}")
 		sourcedir=$(basename "${source}" .apk)
 
+		apksign=${basedir}/apksign
+
 		mkdir ${rootdir}/build-yokai
 		cp "${source}" ${rootdir}/build-yokai
 		cd ${rootdir}/build-yokai
@@ -44,6 +46,9 @@ _build () {
 
 		cp -r "${sourcedir}/original/META-INF" .
 		zip -r Yokai-Root.apk META-INF/ || _error "zip failed!"
+
+		${apksign} Yokai-Root.apk || _error "apksign failed!"
+		mv Yokai-Root.s.apk Yokai-Root.apk
 
 		echo -e "
 Modified apk stored as
