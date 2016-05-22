@@ -1,8 +1,17 @@
 Version	- changes
 
 @Nanolx
-1.0.9	- minor internal changes
+1.0.9	- coding style changes
+	- automated Yokai Watch Wibble Wobble (US) patcher for Linux
+	  - see XDA support thread for more information
+	  - or GitHub repository (file patcher/yokai-patcher)
+	- improved documentation for Yokai Watch Wibble Wobble (US) patching
+	  - see XDA support thread for more information
+	  - or GitHub repository (file YokaiWatchWibbleWobble)
+	- add german support thread on WHB
+	- release management tools
 
+-----
 1.0.8	- minor internal changes
 	- add support for Pokemon Jukebox
 	- fix running Miitomo on Emulator
