@@ -1,7 +1,7 @@
 #!/bin/bash
 
-version=1.2.0
-reldate=2016/05/22
+version=1.2.1
+reldate=2016/05/24
 
 basedir=$(readlink -m "${BASH_SOURCE[0]}")
 basedir=$(dirname ${basedir})
@@ -27,9 +27,9 @@ _build () {
 
 		apksign=${basedir}/apksign
 
-		mkdir ${rootdir}/build-yokai
+		mkdir "${rootdir}"/build-yokai
 		cp "${source}" ${rootdir}/build-yokai
-		cd ${rootdir}/build-yokai
+		cd "${rootdir}"/build-yokai
 		${apktool} ${apktoolparams} \
 			d "${sourceapk}" || _error "apktool failed!"
 
@@ -48,16 +48,19 @@ _build () {
 		zip -r Yokai-Root.apk META-INF/ || _error "zip failed!"
 
 		${apksign} Yokai-Root.apk || _error "apksign failed!"
-		mv Yokai-Root.s.apk Yokai-Root.apk
+		mv Yokai-Root.s.apk "${rootdir}"/Yokai-Root.apk || _error "moving output file failed, ${rootdir} not writeable?"
+
+		cd "${rootdir}"
+		rm -rf "${rootdir}"/build-yokai
 
 		echo -e "
 Modified apk stored as
 
-		${rootdir}/build-yokai/Yokai-Root.apk
+		${rootdir}/Yokai-Root.apk
 
 copy to your device and install or issue
 
-		adb install [-r] ${rootdir}/build-yokai/Yokai-Root.apk
+		adb install [-r] ${rootdir}/Yokai-Root.apk
 
 if your device is connected to your computer.
 "
