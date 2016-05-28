@@ -3,6 +3,8 @@ package org.nanolx.securitybypasser;
 import android.content.Context;
 import android.app.Activity;
 
+import java.util.List;
+
 import de.robv.android.xposed.IXposedHookLoadPackage;
 import de.robv.android.xposed.XC_MethodHook;
 import de.robv.android.xposed.XC_MethodReplacement;
@@ -208,6 +210,102 @@ public class XposedEntryPoint implements IXposedHookLoadPackage
 					{
 						XposedBridge.log("Nanolx Security Bypasser: Pokemon Company is trying to stop us, but I won't let it happen!");
 						XposedBridge.log("(Hooked com.pokemon.music.d.k.c())");
+						return false;
+					}
+				});
+
+		}
+		/*
+		 * ========
+		 *   Amazon Flex / Mobile Delivery
+		 * ========
+		 */
+		else if (param.packageName.equalsIgnoreCase("com.amazon.rabbit"))
+		{
+			XposedBridge.log("Nanolx Security Bypasser: Entering Amazon Flex... Ready... Set... GO!");
+
+			XposedHelpers.findAndHookMethod("com.scottyab.rootbeer.RootBeer",
+				param.classLoader,
+				"checkForBinary",
+				String.class,
+				new XC_MethodReplacement()
+				{
+					@Override
+					protected Object replaceHookedMethod(MethodHookParam param) throws Throwable
+					{
+						XposedBridge.log("Nanolx Security Bypasser: Amazon is trying to stop us, but I won't let it happen!");
+						XposedBridge.log("(com.scottyab.rootbeer.RootBeer.checkForBinary())");
+						return false;
+					}
+				});
+
+			XposedHelpers.findAndHookMethod("com.scottyab.rootbeer.RootBeer",
+				param.classLoader,
+				"checkForRootNative",
+				new XC_MethodReplacement()
+				{
+					@Override
+					protected Object replaceHookedMethod(MethodHookParam param) throws Throwable
+					{
+						XposedBridge.log("Nanolx Security Bypasser: Amazon is trying to stop us, but I won't let it happen!");
+						XposedBridge.log("(com.scottyab.rootbeer.RootBeer.checkForRootNative())");
+						return false;
+					}
+				});
+
+			XposedHelpers.findAndHookMethod("com.scottyab.rootbeer.RootBeer",
+				param.classLoader,
+				"checkSuExists",
+				new XC_MethodReplacement()
+				{
+					@Override
+					protected Object replaceHookedMethod(MethodHookParam param) throws Throwable
+					{
+						XposedBridge.log("Nanolx Security Bypasser: Amazon is trying to stop us, but I won't let it happen!");
+						XposedBridge.log("(com.scottyab.rootbeer.RootBeer.checkSuExists())");
+						return false;
+					}
+				});
+
+			XposedHelpers.findAndHookMethod("com.scottyab.rootbeer.RootBeer",
+				param.classLoader,
+				"checkForRWPaths",
+				new XC_MethodReplacement()
+				{
+					@Override
+					protected Object replaceHookedMethod(MethodHookParam param) throws Throwable
+					{
+						XposedBridge.log("Nanolx Security Bypasser: Amazon is trying to stop us, but I won't let it happen!");
+						XposedBridge.log("(com.scottyab.rootbeer.RootBeer.checkForRWPaths())");
+						return false;
+					}
+				});
+
+			XposedHelpers.findAndHookMethod("com.scottyab.rootbeer.RootBeer",
+				param.classLoader,
+				"checkForDangerousProps",
+				new XC_MethodReplacement()
+				{
+					@Override
+					protected Object replaceHookedMethod(MethodHookParam param) throws Throwable
+					{
+						XposedBridge.log("Nanolx Security Bypasser: Amazon is trying to stop us, but I won't let it happen!");
+						XposedBridge.log("(com.scottyab.rootbeer.RootBeer.checkForDangerousProps())");
+						return false;
+					}
+				});
+
+			XposedHelpers.findAndHookMethod("com.scottyab.rootbeer.RootBeer",
+				param.classLoader,
+				"isAnyPackageFromListInstalled",
+				"java.util.List",
+				new XC_MethodReplacement()
+				{
+					@Override
+					protected Object replaceHookedMethod(MethodHookParam param) throws Throwable
+					{
+						XposedBridge.log("Nanolx Security Bypasser: Amazon is trying to stop us, but I won't let it happen!");
+						XposedBridge.log("(com.scottyab.rootbeer.RootBeer.isAnyPackageFromListInstalled())");
 						return false;
 					}
 				});

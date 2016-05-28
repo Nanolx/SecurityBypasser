@@ -2,6 +2,7 @@ Version	- changes
 
 @Nanolx
 1.0.9	- coding style changes
+	- support for Amazon Flex
 	- automated Yokai Watch Wibble Wobble (US) patcher for Linux
 	  - see XDA support thread for more information
 	  - or GitHub repository (file patcher/yokai-patcher)
