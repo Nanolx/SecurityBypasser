@@ -23,7 +23,7 @@ _bump_version () {
 	versionName=${1}
 
 	sed -e "s/versionCode .*/versionCode ${versionCode}/g" -i ${build_opt}
-	sed -e "s/versionName .*/versionName ${versionName}/g" -i ${build_opt}
+	sed -e "s/versionName .*/versionName \"${versionName}\"/g" -i ${build_opt}
 
 }
 
