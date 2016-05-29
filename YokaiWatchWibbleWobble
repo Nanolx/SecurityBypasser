@@ -20,6 +20,12 @@ execute it and give the name of the apk file as argument, for example
 you need to have xdelta and zip installed. If everything goes fine, the script
 will tell you that it succeeded and where the new Yokai-Root.apk is stored.
 
+Also check
+
+	./patcher/yokai-patcher --help
+
+for additional parameters in case the created apk file does not work properly.
+
 Copy this apk to your device and install it (or install using adb).
 
 ==== Manual Methods (all operating systems) ====
