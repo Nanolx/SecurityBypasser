@@ -18,7 +18,8 @@
 Supports:
  Miitomo,
  Yokai Watch Wibble Wobble (US),
- Pokemon Jukebox"/>
+ Pokemon Jukebox,
+ Amazon Flex"/>
 
 		<meta-data
 			android:name="xposedminversion"
