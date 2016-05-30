@@ -1,6 +1,7 @@
 # Change Log
 
 ## 1.0.10
+- modularize code @midopa
 - doc updates @midopa
 
 ## 1.0.9
