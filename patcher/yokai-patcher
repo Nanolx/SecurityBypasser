@@ -1,7 +1,7 @@
 #!/bin/bash
 
-version=1.2.1
-reldate=2016/05/24
+version=1.3.0
+reldate=2016/06/10
 
 basedir=$(readlink -m "${BASH_SOURCE[0]}")
 basedir=$(dirname ${basedir})
@@ -16,7 +16,7 @@ _build () {
 
 	if [[ -f ${1} && ${1} == *.apk ]]; then
 
-		rm -rf ${rootdir}/build-yokai
+		rm -rf "${rootdir}"/build-yokai
 
 		which xdelta &>/dev/null || _error "xdelta not installed!"
 		xdelta=$(which xdelta)
@@ -33,8 +33,15 @@ _build () {
 		${apktool} ${apktoolparams} \
 			d "${sourceapk}" || _error "apktool failed!"
 
+		version=$(gawk '/^  versionName/{print $2}' < "${sourcedir}"/apktool.yml)
+
+		if [[ ${version} == 1.1.0 ]]; then
+			patchdir="${basedir}"/delta/com.level5.ywwwus/1.1.0
+		else	patchdir="${basedir}"/delta/com.level5.ywwwus/1.0.3
+		fi
+
 		for arch in armeabi armeabi-v7a x86; do
-			${xdelta} patch "${basedir}"/delta/com.level5.ywwwus/libSGF-${arch}.delta \
+			${xdelta} patch "${patchdir}"/libSGF-${arch}.delta \
 				"${sourcedir}"/lib/${arch}/libSGF.so libSGF-mod.so || _error "xdelta failed!"
 
 			mv libSGF-mod.so "${sourcedir}"/lib/${arch}/libSGF.so
@@ -87,6 +94,10 @@ case ${1} in
 	* )	echo -e "Yokai Watch Wibble Wobble (US) root patcher
 
 version ${version} (${reldate})
+
+supported versions:
+	1.0.3, 1.1.0
+
 usage:
 	yokai-patcher		<yokaiwatch.apk>
 	yokai-patcher	--alt	<yokaiwatch.apk>

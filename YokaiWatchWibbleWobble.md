@@ -4,6 +4,10 @@ and consists of two parts:
 - Xposed Override: The easy one, Xposed Module overrides checkRoot() and h()
 - Modified libSGF: The hard one, we need to remove all references to "su" from the libSGF library
 
+Supported versions of Yokai Watch Wibble Wobble (US):
+- 1.0.3
+- 1.1.0
+
 ## Linux only: Automated modification of the libSGF library
 
 1. First download the YWWWUS apk file.
