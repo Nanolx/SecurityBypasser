@@ -1,6 +1,8 @@
 # Change Log
 
-## 1.0.10
+## 1.1.0
+- Support for Miitomo 1.3.0 @Nanolx
+- Updated Yokai Watch Wibble Wobble patches for version 1.1.0
 - modularize code @midopa
 - doc updates @midopa
 
