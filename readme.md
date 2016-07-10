@@ -10,7 +10,7 @@ It supports the following games and applications:
 - Amazon Flex (since Version 1.0.9)
 - Kingdom Hearts Unchained X (running in emulators) (since Version 1.1.1)
 - Puzzles And Dragons (EN)
-- HIT (since Version 1.1.1) [work-in-progress] [not-yet-working]
+- HIT (since Version 1.1.1) [work-in-progress]
 
 ### Basic Instructions
 1. Install Xposed Framework
