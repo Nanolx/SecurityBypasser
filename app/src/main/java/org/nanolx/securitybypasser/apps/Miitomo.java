@@ -103,7 +103,7 @@ public class Miitomo implements IXposedHookLoadPackage
 				protected Object replaceHookedMethod(MethodHookParam p1) throws Throwable
 				{
 					XposedBridge.log("Nanolx Security Bypasser: Mii a emulator? Nope!");
-					XposedBridge.log("(Hooked Cocos2dxActivity.isAndroidEmulator())");
+					XposedBridge.log("(Hooked SecureController.checkEmulator())");
 					return false;
 				}
 			});

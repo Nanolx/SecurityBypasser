@@ -1,8 +1,13 @@
 # Change Log
 
+## 1.1.1
+- support running Kingdom Hearts Unchained X in emulator @Nanolx
+- support running HIT on rooted devices @Nanolx [work-in-progress] [not-yet-working]
+- drop support for Pokemon Jukebox (service ended 30/06/2016) @Nanolx
+
 ## 1.1.0
 - Support for Miitomo 1.3.0 @Nanolx
-- Updated Yokai Watch Wibble Wobble patches for version 1.1.0
+- Updated Yokai Watch Wibble Wobble patches for version 1.1.0 @Nanolx
 - modularize code @midopa
 - doc updates @midopa
 

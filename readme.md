@@ -7,10 +7,9 @@ It supports the following games and applications:
 - Miitomo (since version 1.0.0)
 - Yokai Watch Wibble Wobble (US) (since version 1.0.7)
     - Requires additional steps, see [Yokai Watch setup docs](YokaiWatchWibbleWobble.md)
-- Pokemon Jukebox (since Version 1.0.8)
-    - Service stops for purchases on 30th May 2016
-    - Service stops for re-downloads 30th June 2016
 - Amazon Flex (since Version 1.0.9)
+- Kingdom Hearts Unchained X (running in emulators) (since Version 1.1.1)
+- HIT (since Version 1.1.1) [work-in-progress] [not-yet-working]
 
 ### Basic Instructions
 1. Install Xposed Framework
