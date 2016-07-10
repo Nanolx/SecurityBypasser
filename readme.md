@@ -9,6 +9,7 @@ It supports the following games and applications:
     - Requires additional steps, see [Yokai Watch setup docs](YokaiWatchWibbleWobble.md)
 - Amazon Flex (since Version 1.0.9)
 - Kingdom Hearts Unchained X (running in emulators) (since Version 1.1.1)
+- Puzzles And Dragons (EN)
 - HIT (since Version 1.1.1) [work-in-progress] [not-yet-working]
 
 ### Basic Instructions

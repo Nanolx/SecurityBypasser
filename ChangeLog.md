@@ -2,6 +2,7 @@
 
 ## 1.1.1
 - support running Kingdom Hearts Unchained X in emulator @Nanolx
+- support running Puzzles And Dragons (EN) on rooted devices @Nanolx
 - support running HIT on rooted devices @Nanolx [work-in-progress] [not-yet-working]
 - drop support for Pokemon Jukebox (service ended 30/06/2016) @Nanolx
 
