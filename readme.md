@@ -8,9 +8,10 @@ It supports the following games and applications:
 - Yokai Watch Wibble Wobble (US) (since version 1.0.7)
     - Requires additional steps, see [Yokai Watch setup docs](YokaiWatchWibbleWobble.md)
 - Amazon Flex (since Version 1.0.9)
-- Kingdom Hearts Unchained X (running in emulators) (since Version 1.1.1)
-- Puzzles And Dragons (EN)
-- HIT (since Version 1.1.1) [work-in-progress]
+- Kingdom Hearts Unchained X (running in emulators) (since version 1.1.1) [work-in-progress]
+- Puzzles And Dragons (EN) (since version 1.1.1)
+- Monster Hunter Explore (since version 1.1.1) [work-in-progress]
+- HIT (since version 1.1.1) [work-in-progress]
 
 ### Basic Instructions
 1. Install Xposed Framework
