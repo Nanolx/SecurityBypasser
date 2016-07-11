@@ -1,16 +1,16 @@
 # Nanolx Security Bypasser (Xposed Module)
 
-Nanolx Security Bypasser helps you get your games and applications
-with anti-root checks run normally on your rooted devices.
+Nanolx Security Bypasser helps you get your games and applications with
+anti-root checks run normally on your rooted devices or emulators.
 
 It supports the following games and applications:
 - Miitomo (since version 1.0.0)
-- Yokai Watch Wibble Wobble (US) (since version 1.0.7)
+- Yokai Watch Wibble Wobble US (since version 1.0.7)
     - Requires additional steps, see [Yokai Watch setup docs](YokaiWatchWibbleWobble.md)
 - Amazon Flex (since Version 1.0.9)
-- Kingdom Hearts Unchained X (running in emulators) (since version 1.1.1) [work-in-progress]
-- Puzzles And Dragons (EN) (since version 1.1.1)
-- Monster Hunter Explore (since version 1.1.1) [work-in-progress]
+- Kingdom Hearts Unchained X (since version 1.1.1) [work-in-progress]
+- Puzzles & Dragons EN (since version 1.1.1)
+- Monster Hunter Explore (since version 1.1.1)
 - HIT (since version 1.1.1) [work-in-progress]
 
 ### Basic Instructions
