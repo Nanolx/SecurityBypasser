@@ -6,6 +6,11 @@
 - support running HIT on rooted devices @Nanolx [work-in-progress]
 - support running Monster Hunter Explore on rooted devices @Nanolx [work-in-progress]]
 - drop support for Pokemon Jukebox (service ended 30/06/2016) @Nanolx
+- Yokai Watch Wibble Wobble (US) Patcher 1.4.0
+  - support game version 1.1.1
+  - use xdelta3 instead of xdelta
+  - supply xdelta3 for 32 and 64 bit
+    - use supplied xdelta3 if not installed
 
 ## 1.1.0
 - Support for Miitomo 1.3.0 @Nanolx

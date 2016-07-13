@@ -1,7 +1,7 @@
 #!/bin/bash
 
-version=1.3.0
-reldate=2016/06/10
+version=1.4.0
+reldate=2016/07/13
 
 basedir=$(readlink -m "${BASH_SOURCE[0]}")
 basedir=$(dirname ${basedir})
@@ -18,8 +18,13 @@ _build () {
 
 		rm -rf "${rootdir}"/build-yokai
 
-		which xdelta &>/dev/null || _error "xdelta not installed!"
-		xdelta=$(which xdelta)
+		xdelta=$(which xdelta3)
+		if [[ ${xdelta} == "" ]]; then
+			if [[ $(uname -m) == "x86_64" ]]; then
+				xdelta="${basedir}"/patcher/xdelta3.64
+			else	xdelta="${basedir}"/patcher/xdelta3.32
+			fi
+		fi
 
 		source="${1}"
 		sourceapk=$(basename "${source}")
@@ -35,14 +40,17 @@ _build () {
 
 		version=$(gawk '/^  versionName/{print $2}' < "${sourcedir}"/apktool.yml)
 
-		if [[ ${version} == 1.1.0 ]]; then
-			patchdir="${basedir}"/delta/com.level5.ywwwus/1.1.0
-		else	patchdir="${basedir}"/delta/com.level5.ywwwus/1.0.3
+		if [[ -d "${basedir}"/delta/com.level5.ywwwus/${version} ]]; then
+			patchdir="${basedir}"/delta/com.level5.ywwwus/${version}
+		else
+			echo -e "\n!! version ${version} is not supported !!\n"
+			exit 1
 		fi
 
 		for arch in armeabi armeabi-v7a x86; do
-			${xdelta} patch "${patchdir}"/libSGF-${arch}.delta \
-				"${sourcedir}"/lib/${arch}/libSGF.so libSGF-mod.so || _error "xdelta failed!"
+			${xdelta} -d -f -s "${sourcedir}"/lib/${arch}/libSGF.so \
+				"${patchdir}"/libSGF-${arch}.delta \
+				libSGF-mod.so || _error "xdelta3 failed!"
 
 			mv libSGF-mod.so "${sourcedir}"/lib/${arch}/libSGF.so
 		done
