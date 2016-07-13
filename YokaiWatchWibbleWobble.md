@@ -4,9 +4,8 @@ and consists of two parts:
 - Xposed Override: The easy one, Xposed Module overrides checkRoot() and h()
 - Modified libSGF: The hard one, we need to remove all references to "su" from the libSGF library
 
-Supported versions of Yokai Watch Wibble Wobble (US):
-- 1.0.3
-- 1.1.0
+Supported versions of Yokai Watch Wibble Wobble (US) (automatic patcher):
+- 1.1.1
 
 ## Linux only: Automated modification of the libSGF library
 
@@ -69,19 +68,22 @@ To modify the library there are three ways.
 #### A) Using xdelta patches
 In the directory patcher/delta/com.level5.ywwwus you'll find xdelta patches to be applied like:
 
-        xdelta <delta-patch>  <original-lib> <modified-lib>
+        xdelta3 <original-lib> <delta-patch> <modified-lib>
 
    for example with the armeabi libSGF:
 
-        xdelta libSGF-armeabi.delta libSGF.so libSGF-mod.so
+        xdelta3 libSGF.so libSGF-armeabi.delta libSGF-mod.so
 
    with the armeabi-v7a libSGF:
 
-        xdelta libSGF-armeabi-v7a.delta libSGF.so libSGF-mod.so
+        xdelta3 libSGF.so libSGF-armeabi-v7a.delta libSGF-mod.so
 
    or with the x86 libSGF:
 
-        xdelta libSGF-x86.delta libSGF.so libSGF-mod.so
+        xdelta3 libSGF.so libSGF-x86.delta libSGF-mod.so
+
+If xdelta3 is not available on your system, you'll find 32 and 64 bit versions in
+the directory [patcher](patcher).
 
 #### B) Command line editor
 Use Vim, Emacs, or whatever text editor you prefer. Simply open the library and
