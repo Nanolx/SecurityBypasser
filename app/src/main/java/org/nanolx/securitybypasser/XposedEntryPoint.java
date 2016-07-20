@@ -3,6 +3,7 @@ package org.nanolx.securitybypasser;
 import de.robv.android.xposed.IXposedHookLoadPackage;
 import de.robv.android.xposed.callbacks.XC_LoadPackage.LoadPackageParam;
 import org.nanolx.securitybypasser.apps.AmazonFlex;
+import org.nanolx.securitybypasser.apps.FFBraveExvius;
 import org.nanolx.securitybypasser.apps.HIT;
 import org.nanolx.securitybypasser.apps.KingdomHeartsUX;
 import org.nanolx.securitybypasser.apps.Miitomo;
@@ -25,6 +26,7 @@ public class XposedEntryPoint implements IXposedHookLoadPackage
 		// Note: These package names must be lowercase.
 		appRegistry = new HashMap<String, Class<? extends IXposedHookLoadPackage>>();
 		appRegistry.put("com.amazon.rabbit", AmazonFlex.class);
+		appRegistry.put("com.square_enix.android_googleplay.ffbeww", FFBraveExvius.class);
 		appRegistry.put("com.nexon.hit.global", HIT.class);
 		appRegistry.put("com.square_enix.android_googleplay.khuxww", KingdomHeartsUX.class);
 		appRegistry.put("com.nintendo.zaaa", Miitomo.class);
