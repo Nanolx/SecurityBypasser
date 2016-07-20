@@ -12,6 +12,7 @@ It supports the following games and applications:
 - Puzzles & Dragons EN (since version 1.1.1)
 - Monster Hunter Explore (since version 1.1.1)
 - HIT (since version 1.1.1) [work-in-progress]
+- Final Fantasy Brave Exvius (since version 1.1.1) [work-in-progress]
 
 ### Basic Instructions
 1. Install Xposed Framework
