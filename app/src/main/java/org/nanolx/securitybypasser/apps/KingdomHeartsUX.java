@@ -1,6 +1,5 @@
 package org.nanolx.securitybypasser.apps;
 
-import android.app.Activity;
 import de.robv.android.xposed.IXposedHookLoadPackage;
 import de.robv.android.xposed.XC_MethodReplacement;
 import de.robv.android.xposed.XposedBridge;
