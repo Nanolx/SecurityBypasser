@@ -1,7 +1,7 @@
 #!/bin/bash
 
-version=1.4.0
-reldate=2016/07/13
+version=1.4.1
+reldate=2016/07/20
 
 basedir=$(readlink -m "${BASH_SOURCE[0]}")
 basedir=$(dirname ${basedir})
@@ -57,13 +57,11 @@ _build () {
 
 		${apktool} ${apktoolparams} \
 			b "${sourcedir}" \
-			-o Yokai-Root.apk || _error "apktool failed!"
+			-o Yokai-WWWUS-Root_${version}.apk || _error "apktool failed!"
 
-		cp -r "${sourcedir}/original/META-INF" .
-		zip -r Yokai-Root.apk META-INF/ || _error "zip failed!"
-
-		${apksign} Yokai-Root.apk || _error "apksign failed!"
-		mv Yokai-Root.s.apk "${rootdir}"/Yokai-Root.apk || _error "moving output file failed, ${rootdir} not writeable?"
+		${apksign} Yokai-WWWUS-Root_${version}.apk || _error "apksign failed!"
+		mv Yokai-WWWUS-Root_${version}.s.apk \
+			"${rootdir}"/Yokai-WWWUS-Root_${version}.apk || _error "moving output file failed, ${rootdir} not writeable?"
 
 		cd "${rootdir}"
 		rm -rf "${rootdir}"/build-yokai
@@ -71,11 +69,11 @@ _build () {
 		echo -e "
 Modified apk stored as
 
-		${rootdir}/Yokai-Root.apk
+		${rootdir}/Yokai-WWWUS-Root_${version}.apk
 
 copy to your device and install or issue
 
-		adb install [-r] ${rootdir}/Yokai-Root.apk
+		adb install [-r] ${rootdir}/Yokai-WWWUS-Root_${version}.apk
 
 if your device is connected to your computer.
 "
@@ -103,7 +101,7 @@ case ${1} in
 
 version ${version} (${reldate})
 
-supported versions:
+supported game versions:
 	1.1.1
 
 usage:
