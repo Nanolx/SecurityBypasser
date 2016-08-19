@@ -31,9 +31,9 @@ public class YokaiWatchWW implements IXposedHookLoadPackage
 				}
 			});
 
-		XposedHelpers.findAndHookMethod("com.mparticle.b.d",
+		XposedHelpers.findAndHookMethod("com.mparticle.internal.MPUtility",
 			param.classLoader,
-			"h",
+			"isPhoneRooted",
 			Context.class,
 			new XC_MethodReplacement()
 			{
@@ -41,7 +41,7 @@ public class YokaiWatchWW implements IXposedHookLoadPackage
 				protected Object replaceHookedMethod(MethodHookParam param) throws Throwable
 				{
 					XposedBridge.log("Nanolx Security Bypasser: Hey, don't sniff into /system!");
-					XposedBridge.log("(com.mparticle.b.d.h())");
+					XposedBridge.log("(com.mparticle.internal.MPUtility.isPhoneRooted())");
 					return false;
 				}
 			});
