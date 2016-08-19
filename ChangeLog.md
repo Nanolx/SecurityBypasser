@@ -1,4 +1,7 @@
-# Change Log
+# ChangeLog
+
+## 1.2.1
+- minor fix in Yokai Watch Wibble Wobble (US) routine override
 
 ## 1.2.0
 - support running Puzzles And Dragons (EN) on rooted devices @Nanolx

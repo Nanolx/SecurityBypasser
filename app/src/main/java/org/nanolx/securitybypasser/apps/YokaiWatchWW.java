@@ -34,7 +34,6 @@ public class YokaiWatchWW implements IXposedHookLoadPackage
 		XposedHelpers.findAndHookMethod("com.mparticle.internal.MPUtility",
 			param.classLoader,
 			"isPhoneRooted",
-			Context.class,
 			new XC_MethodReplacement()
 			{
 				@Override
