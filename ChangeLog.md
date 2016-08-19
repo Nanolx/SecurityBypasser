@@ -1,12 +1,9 @@
 # Change Log
 
-## 1.1.1
-- support running Kingdom Hearts Unchained X in emulator @Nanolx [work-in-progress]
-- support running Final Fantasy Brave Exvius in emulator @Nanolx [work-in-progress]
-- support running Final Fantasy Brave Exvius with adblocker @Nanolx [work-in-progress]
+## 1.2.0
 - support running Puzzles And Dragons (EN) on rooted devices @Nanolx
-- support running HIT on rooted devices @Nanolx [work-in-progress]
 - support running Monster Hunter Explore on rooted devices @Nanolx
+- support running Yokai Watch Wibble Wobble (US) version 1.2.0 @Nanolx
 - drop support for Pokemon Jukebox (service ended 30/06/2016) @Nanolx
 - Yokai Watch Wibble Wobble (US) Patcher 1.4.0:
   - support game version 1.1.1
@@ -17,6 +14,16 @@
   - name created file Yokai-WWWUS-Root instead of Yokai-Root
   - append version of game to generated apk
   - remove one useless step during patching
+- Yokai Watch Wibble Wobble (US) Patcher 1.4.2:
+  - support game version 1.2.0
+- Work in Progress stuff (not yet or only partially working):
+  - support running Kingdom Hearts Unchained X in emulator @Nanolx
+    - should work, but untested
+  - support running Final Fantasy Brave Exvius in emulator @Nanolx
+    - should work, when ads are not blocked, but untested
+    - TODO: support running Final Fantasy Brave Exvius with ads blocked
+  - support running HIT on rooted devices @Nanolx
+    - XXX: still long way to go
 
 ## 1.1.0
 - Support for Miitomo 1.3.0 @Nanolx
