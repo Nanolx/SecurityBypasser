@@ -68,19 +68,21 @@ To modify the library there are three ways.
 #### A) Using xdelta patches
 In the directory patcher/delta/com.level5.ywwwus you'll find xdelta patches to be applied like:
 
-        xdelta3 <original-lib> <delta-patch> <modified-lib>
+        xdelta3 -d -s -f <original-lib> <delta-patch> <modified-lib>
 
    for example with the armeabi libSGF:
 
-        xdelta3 libSGF.so libSGF-armeabi.delta libSGF-mod.so
+        xdelta3 -d -s -f libSGF.so libSGF-armeabi.delta libSGF-mod.so
 
    with the armeabi-v7a libSGF:
 
-        xdelta3 libSGF.so libSGF-armeabi-v7a.delta libSGF-mod.so
+        xdelta3 -d -s -f libSGF.so libSGF-armeabi-v7a.delta libSGF-mod.so
 
    or with the x86 libSGF:
 
-        xdelta3 libSGF.so libSGF-x86.delta libSGF-mod.so
+        xdelta3 -d -s -f libSGF.so libSGF-x86.delta libSGF-mod.so
+
+afterwards replace the original libSGF.so with libSGF-mod.so
 
 If xdelta3 is not available on your system, you'll find 32 and 64 bit versions in
 the directory [patcher](patcher).
