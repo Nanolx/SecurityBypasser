@@ -1,7 +1,7 @@
 #!/bin/bash
 
-version=1.4.1
-reldate=2016/07/20
+version=1.4.2
+reldate=2016/08/19
 
 basedir=$(readlink -m "${BASH_SOURCE[0]}")
 basedir=$(dirname ${basedir})
@@ -103,6 +103,7 @@ version ${version} (${reldate})
 
 supported game versions:
 	1.1.1
+	1.2.0
 
 usage:
 	yokai-patcher		<yokaiwatch.apk>
