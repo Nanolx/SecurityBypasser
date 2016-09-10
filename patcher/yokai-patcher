@@ -104,6 +104,7 @@ version ${version} (${reldate})
 supported game versions:
 	1.1.1
 	1.2.0
+	1.2.1
 
 usage:
 	yokai-patcher		<yokaiwatch.apk>
