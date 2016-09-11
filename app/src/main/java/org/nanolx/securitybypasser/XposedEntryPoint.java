@@ -8,7 +8,6 @@ import org.nanolx.securitybypasser.apps.HIT;
 import org.nanolx.securitybypasser.apps.KingdomHeartsUX;
 import org.nanolx.securitybypasser.apps.Miitomo;
 import org.nanolx.securitybypasser.apps.MonsterHunterExplore;
-import org.nanolx.securitybypasser.apps.PokemonGo;
 import org.nanolx.securitybypasser.apps.PuzzlesAndDragons;
 import org.nanolx.securitybypasser.apps.YokaiWatchWW;
 
@@ -32,7 +31,6 @@ public class XposedEntryPoint implements IXposedHookLoadPackage
 		appRegistry.put("com.square_enix.android_googleplay.khuxww", KingdomHeartsUX.class);
 		appRegistry.put("com.nintendo.zaaa", Miitomo.class);
 		appRegistry.put("jp.co.capcom.android.explore", MonsterHunterExplore.class);
-		appRegistry.put("com.nianticlabs.pokemongo", PokemonGo.class);
 		appRegistry.put("jp.gungho.padEN", PuzzlesAndDragons.class);
 		appRegistry.put("com.level5.ywwwus", YokaiWatchWW.class);
 	}
