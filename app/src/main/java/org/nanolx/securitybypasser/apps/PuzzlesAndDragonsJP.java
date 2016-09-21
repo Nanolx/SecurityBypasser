@@ -8,16 +8,16 @@ import de.robv.android.xposed.XposedHelpers;
 import de.robv.android.xposed.callbacks.XC_LoadPackage;
 
 /**
- * Puzzles And Dragons (EN)
+ * Puzzles And Dragons (HT)
  */
-public class PuzzlesAndDragons implements IXposedHookLoadPackage
+public class PuzzlesAndDragonsJP implements IXposedHookLoadPackage
 {
 	@Override
 	public void handleLoadPackage(XC_LoadPackage.LoadPackageParam param) throws Throwable
 	{
 		XposedBridge.log("Nanolx Security Bypasser: Entering Puzzles And Dragons (EN)... Ready... Set... GO!");
 
-		XposedHelpers.findAndHookMethod("jp.gungho.padEN.AppDelegate",
+		XposedHelpers.findAndHookMethod("jp.gungho.padHT.AppDelegate",
 			param.classLoader,
 			"checkRoot",
 			new XC_MethodReplacement()
@@ -26,7 +26,7 @@ public class PuzzlesAndDragons implements IXposedHookLoadPackage
 				protected Object replaceHookedMethod(MethodHookParam param) throws Throwable
 				{
 					XposedBridge.log("Nanolx Security Bypasser: Gungho is trying to stop us, but I won't let it happen!");
-					XposedBridge.log("(Hooked jp.gungho.padEN.AppDelegate.checkRoot())");
+					XposedBridge.log("(Hooked jp.gungho.padHT.AppDelegate.checkRoot())");
 					return false;
 				}
 			});

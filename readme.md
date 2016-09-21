@@ -10,6 +10,7 @@ It supports the following games and applications:
 - Amazon Flex (since Version 1.0.9)
 - Kingdom Hearts Unchained X (since version 1.1.1) [work-in-progress]
 - Puzzles & Dragons EN (since version 1.1.1)
+- Puzzles & Dragons HT (since version 1.3.0)
 - Monster Hunter Explore (since version 1.1.1)
 - HIT (since version 1.1.1) [work-in-progress]
 - Final Fantasy Brave Exvius (since version 1.1.1) [work-in-progress]
