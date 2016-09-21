@@ -15,7 +15,7 @@ public class PuzzlesAndDragonsJP implements IXposedHookLoadPackage
 	@Override
 	public void handleLoadPackage(XC_LoadPackage.LoadPackageParam param) throws Throwable
 	{
-		XposedBridge.log("Nanolx Security Bypasser: Entering Puzzles And Dragons (EN)... Ready... Set... GO!");
+		XposedBridge.log("Nanolx Security Bypasser: Entering Puzzles And Dragons (JP)... Ready... Set... GO!");
 
 		XposedHelpers.findAndHookMethod("jp.gungho.padHT.AppDelegate",
 			param.classLoader,
