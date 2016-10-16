@@ -5,6 +5,7 @@
 - Yokai Watch Wibble Wobble (US) Patcher:
   - support game versions 1.2.1, 1.2.2 @Nanolx
   - support game version 2.0.0 @Cubkyle
+  - support game version 2.0.1 @Nanolx
 
 ## 1.2.1
 - minor fix in Yokai Watch Wibble Wobble (US) routine override
