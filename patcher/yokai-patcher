@@ -1,7 +1,7 @@
 #!/bin/bash
 
-version=1.4.2
-reldate=2016/08/19
+version=1.5.0
+reldate=2016/10/27
 
 basedir=$(readlink -m "${BASH_SOURCE[0]}")
 basedir=$(dirname ${basedir})
@@ -54,6 +54,22 @@ _build () {
 
 			mv libSGF-mod.so "${sourcedir}"/lib/${arch}/libSGF.so
 		done
+
+		sed -e 's/const-string v3, "su"/const-string v3, "trololol"/g' \
+			-i "${sourcedir}"/smali/com/example/sgf/MainActivity.smali || \
+			_error "modifying sgf.MainActivity failed!"
+
+		sed -e 's/bin\//nothinghere\//g' \
+			-i "${sourcedir}"/smali/com/mparticle/internal/MPUtility.smali || \
+			_error "modifying MPUtility failed!"
+
+		sed -e 's/data\/local\//nothing\/here\//g' \
+			-i "${sourcedir}"/smali/com/mparticle/internal/MPUtility.smali || \
+			_error "modifying MPUtility failed!"
+
+		sed -e 's/const-string v1, "sdk"/const-string v1, "leavemealone"/g' \
+			-i "${sourcedir}"/smali/com/hangame/hsp/util/DeviceInfoUtil.smali ||
+			_error "modifying hsp.util.DeviceInfoUtil failed!"
 
 		${apktool} ${apktoolparams} \
 			b "${sourcedir}" \
