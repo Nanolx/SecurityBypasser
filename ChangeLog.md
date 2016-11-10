@@ -1,6 +1,7 @@
 # ChangeLog
 
 ## 1.3.0
+- support Miitomo 2.0.1 @Nanolx
 - support running Puzzles And Dragons (JP) on rooted devices @Nanolx
 - Yokai Watch Wibble Wobble (US) Patcher:
   - support game versions 1.2.1, 1.2.2 @Nanolx
