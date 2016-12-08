@@ -28,7 +28,7 @@ _bump_version () {
 }
 
 _build_apk () {
-	gradle build || _error "building Security Bypasser failed!"
+	${basedir}/gradlew build || _error "building Security Bypasser failed!"
 }
 
 _sign_apk () {
@@ -40,7 +40,7 @@ _sign_apk () {
 }
 
 _clean () {
-	gradle clean || _error "cleaning up build directory failed!"
+	${basedir}/gradlew clean || _error "cleaning up build directory failed!"
 	rm -rf ${basedir}/build
 }
 

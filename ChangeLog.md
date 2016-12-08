@@ -1,5 +1,8 @@
 # ChangeLog
 
+## 1.3.1
+- support Miitomo 2.1.0 @Nanolx
+
 ## 1.3.0
 - support Miitomo 2.0.1 @Nanolx
 - support running Puzzles And Dragons (JP) on rooted devices @Nanolx
