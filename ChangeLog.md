@@ -1,5 +1,9 @@
 # ChangeLog
 
+## 1.3.2
+- Yokai Watch Wibble Wobble (US) Patcher:
+  - support game version 2.0.2 @Nanolx
+
 ## 1.3.1
 - support Miitomo 2.1.0 @Nanolx
 
