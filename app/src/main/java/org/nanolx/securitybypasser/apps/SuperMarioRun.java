@@ -23,7 +23,7 @@ public class SuperMarioRun implements IXposedHookLoadPackage {
                     @Override
                     protected Object replaceHookedMethod(MethodHookParam param) throws Throwable {
                         XposedBridge.log("Nanolx Security Bypasser: Nintendo is trying to stop us, but I won't let it happen!");
-                        XposedBridge.log("Hooked PrivilegeChecker.hasPackage())");
+                        XposedBridge.log("Hooked PrivilegeChecker.hasPackage()");
                         return false;
                     }
                 });
@@ -35,7 +35,7 @@ public class SuperMarioRun implements IXposedHookLoadPackage {
                     @Override
                     protected Object replaceHookedMethod(MethodHookParam param) throws Throwable {
                         XposedBridge.log("Nanolx Security Bypasser: Nintendo is trying to stop us, but I won't let it happen!");
-                        XposedBridge.log("Hooked PrivilegeChecker.isDebuggerAttachedJava())");
+                        XposedBridge.log("Hooked PrivilegeChecker.isDebuggerAttachedJava()");
                         return false;
                     }
                 });
@@ -47,7 +47,7 @@ public class SuperMarioRun implements IXposedHookLoadPackage {
                     @Override
                     protected Object replaceHookedMethod(MethodHookParam param) throws Throwable {
                         XposedBridge.log("Nanolx Security Bypasser: Nintendo is trying to stop us, but I won't let it happen!");
-                        XposedBridge.log("Hooked PrivilegeChecker.isDebuggerAttachedNative())");
+                        XposedBridge.log("Hooked PrivilegeChecker.isDebuggerAttachedNative()");
                         return false;
                     }
                 });
@@ -59,7 +59,7 @@ public class SuperMarioRun implements IXposedHookLoadPackage {
                     @Override
                     protected Object replaceHookedMethod(MethodHookParam param) throws Throwable {
                         XposedBridge.log("Nanolx Security Bypasser: Nintendo is trying to stop us, but I won't let it happen!");
-                        XposedBridge.log("Hooked PrivilegeChecker.isDebuggerAttachedNative2())");
+                        XposedBridge.log("Hooked PrivilegeChecker.isDebuggerAttachedNative2()");
                         return false;
                     }
                 });
@@ -71,7 +71,7 @@ public class SuperMarioRun implements IXposedHookLoadPackage {
                     @Override
                     protected Object replaceHookedMethod(MethodHookParam param) throws Throwable {
                         XposedBridge.log("Nanolx Security Bypasser: Nintendo is trying to stop us, but I won't let it happen!");
-                        XposedBridge.log("Hooked PrivilegeChecker.isEmulator())");
+                        XposedBridge.log("Hooked PrivilegeChecker.isEmulator()");
                         return false;
                     }
                 });
@@ -84,7 +84,7 @@ public class SuperMarioRun implements IXposedHookLoadPackage {
                     @Override
                     protected Object replaceHookedMethod(MethodHookParam param) throws Throwable {
                         XposedBridge.log("Nanolx Security Bypasser: Nintendo is trying to stop us, but I won't let it happen!");
-                        XposedBridge.log("Hooked PrivilegeChecker.isRooted())");
+                        XposedBridge.log("Hooked PrivilegeChecker.isRooted()");
                         return false;
                     }
                 });
@@ -97,7 +97,7 @@ public class SuperMarioRun implements IXposedHookLoadPackage {
                     @Override
                     protected Object replaceHookedMethod(MethodHookParam param) throws Throwable {
                         XposedBridge.log("Nanolx Security Bypasser: Nintendo is trying to stop us, but I won't let it happen!");
-                        XposedBridge.log("Hooked PrivilegeChecker.isUSBConnected())");
+                        XposedBridge.log("Hooked PrivilegeChecker.isUSBConnected()");
                         return false;
                     }
                 });
@@ -110,7 +110,7 @@ public class SuperMarioRun implements IXposedHookLoadPackage {
                     @Override
                     protected Object replaceHookedMethod(MethodHookParam param) throws Throwable {
                         XposedBridge.log("Nanolx Security Bypasser: Nintendo is trying to stop us, but I won't let it happen!");
-                        XposedBridge.log("Hooked PrivilegeChecker.isUSBDebugEnabled())");
+                        XposedBridge.log("Hooked PrivilegeChecker.isUSBDebugEnabled()");
                         return false;
                     }
                 });
@@ -123,7 +123,7 @@ public class SuperMarioRun implements IXposedHookLoadPackage {
                     @Override
                     protected Object replaceHookedMethod(MethodHookParam param) throws Throwable {
                         XposedBridge.log("Nanolx Security Bypasser: Nintendo is trying to stop us, but I won't let it happen!");
-                        XposedBridge.log("Hooked PrivilegeChecker.isUSBDebugOptionEnabled())");
+                        XposedBridge.log("Hooked PrivilegeChecker.isUSBDebugOptionEnabled()");
                         return false;
                     }
                 });
