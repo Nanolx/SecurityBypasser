@@ -127,5 +127,28 @@ public class SuperMarioRun implements IXposedHookLoadPackage {
                         return false;
                     }
                 });
+        // isSuccess()
+        XposedHelpers.findAndHookMethod("com.snslinkage.dena.snslinkageunityplugin.AttestCall",
+                param.classLoader,
+                "isSuccess",
+                new XC_MethodReplacement() {
+                    @Override
+                    protected Object replaceHookedMethod(MethodHookParam param) throws Throwable {
+                        XposedBridge.log("Nanolx Security Bypasser: Nintendo is trying to stop us, but I won't let it happen!");
+                        XposedBridge.log("Hooked AttestCall.isSuccess()");
+                        return true;
+                    }
+                });
+
+        // String[] packages
+        XposedHelpers.setStaticObjectField(
+                XposedHelpers.findClass("jp.dena.securelib.PrivilegeChecker", param.classLoader),
+                "packages",
+                new String[]{"non.existing.package"});
+        // String[] suExecutables
+        XposedHelpers.setStaticObjectField(
+                XposedHelpers.findClass("jp.dena.securelib.PrivilegeChecker", param.classLoader),
+                "suExecutables",
+                new String[]{"/non/existing/path"});
     }
 }
