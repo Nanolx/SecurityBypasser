@@ -11,6 +11,7 @@ import org.nanolx.securitybypasser.apps.MonsterHunterExplore;
 import org.nanolx.securitybypasser.apps.PuzzlesAndDragonsEN;
 import org.nanolx.securitybypasser.apps.PuzzlesAndDragonsJP;
 import org.nanolx.securitybypasser.apps.YokaiWatchWW;
+import org.nanolx.securitybypasser.apps.YokaiWatchWWEU;
 
 import java.util.HashMap;
 import java.util.Locale;
