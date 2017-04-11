@@ -12,15 +12,14 @@ and consists of two parts:
     - In the directory [patcher](patcher) you'll find the script [yokai-patcher](patcher/yokai-patcher)
     - Execute it and give the name of the apk file as argument, for example:
 
-            ./patcher/yokai-patcher /home/user/YokaiWatchWibbleWobble.apk
+            ./patcher/yokai-patcher --us /home/user/YokaiWatchWibbleWobble.apk
+
+for the US version, or for the EU version:
+
+            ./patcher/yokai-patcher --eu /home/user/YokaiWatchWibbleWobble.apk
 
 1. If everything goes fine, the script will tell you that it succeeded and where
 the new Yokai-Root.apk is stored.
-1. Also check:
-
-        ./patcher/yokai-patcher --help
-
-    for additional parameters in case the created apk file does not work properly.
 
 1. Copy this apk to your device and install it (or install using adb).
 
