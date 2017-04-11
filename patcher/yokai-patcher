@@ -1,10 +1,10 @@
 #!/bin/bash
 
-version=1.5.0
-reldate=2016/10/27
+version=1.6.0
+reldate=2017/04/12
 
 basedir=$(readlink -m "${BASH_SOURCE[0]}")
-basedir=$(dirname ${basedir})
+basedir=$(dirname "${basedir}")
 rootdir="${PWD}"
 
 _error () {
@@ -35,13 +35,12 @@ _build () {
 		mkdir "${rootdir}"/build-yokai
 		cp "${source}" ${rootdir}/build-yokai
 		cd "${rootdir}"/build-yokai
-		${apktool} ${apktoolparams} \
-			d "${sourceapk}" || _error "apktool failed!"
+		${apktool} d "${sourceapk}" || _error "apktool failed!"
 
 		version=$(gawk '/^  versionName/{print $2}' < "${sourcedir}"/apktool.yml)
 
-		if [[ -d "${basedir}"/delta/com.level5.ywwwus/${version} ]]; then
-			patchdir="${basedir}"/delta/com.level5.ywwwus/${version}
+		if [[ -d "${basedir}"/delta/${patchdir}/${version} ]]; then
+			patchdir="${basedir}"/delta/${patchdir}/${version}
 		else
 			echo -e "\n!! version ${version} is not supported !!\n"
 			exit 1
@@ -59,25 +58,29 @@ _build () {
 			-i "${sourcedir}"/smali/com/example/sgf/MainActivity.smali || \
 			_error "modifying sgf.MainActivity failed!"
 
-		sed -e 's/bin\//nothinghere\//g' \
-			-i "${sourcedir}"/smali/com/mparticle/internal/MPUtility.smali || \
-			_error "modifying MPUtility failed!"
+		# only for US version
+		if [[ ${patchdir} == *ywwus* ]]; then
 
-		sed -e 's/data\/local\//nothing\/here\//g' \
-			-i "${sourcedir}"/smali/com/mparticle/internal/MPUtility.smali || \
-			_error "modifying MPUtility failed!"
+			sed -e 's/bin\//nothinghere\//g' \
+				-i "${sourcedir}"/smali/com/mparticle/internal/MPUtility.smali || \
+				_error "modifying MPUtility failed!"
+
+			sed -e 's/data\/local\//nothing\/here\//g' \
+				-i "${sourcedir}"/smali/com/mparticle/internal/MPUtility.smali || \
+				_error "modifying MPUtility failed!"
+
+		fi
 
 		sed -e 's/const-string v1, "sdk"/const-string v1, "leavemealone"/g' \
 			-i "${sourcedir}"/smali/com/hangame/hsp/util/DeviceInfoUtil.smali ||
 			_error "modifying hsp.util.DeviceInfoUtil failed!"
 
-		${apktool} ${apktoolparams} \
-			b "${sourcedir}" \
-			-o Yokai-WWWUS-Root_${version}.apk || _error "apktool failed!"
+		${apktool} b "${sourcedir}" \
+			-o Yokai-Watch-WW_${version}.apk || _error "apktool failed!"
 
-		${apksign} Yokai-WWWUS-Root_${version}.apk || _error "apksign failed!"
-		mv Yokai-WWWUS-Root_${version}.s.apk \
-			"${rootdir}"/Yokai-WWWUS-Root_${version}.apk || _error "moving output file failed, ${rootdir} not writeable?"
+		${apksign} Yokai-Watch-WW_${version}.apk || _error "apksign failed!"
+		mv Yokai-Watch-WW_${version}.s.apk \
+			"${rootdir}"/Yokai-Watch-WW_${version}.apk || _error "moving output file failed, ${rootdir} not writeable?"
 
 		cd "${rootdir}"
 		rm -rf "${rootdir}"/build-yokai
@@ -85,11 +88,11 @@ _build () {
 		echo -e "
 Modified apk stored as
 
-		${rootdir}/Yokai-WWWUS-Root_${version}.apk
+		${rootdir}/Yokai-Watch-WW_${version}.apk
 
 copy to your device and install or issue
 
-		adb install [-r] ${rootdir}/Yokai-WWWUS-Root_${version}.apk
+		adb install [-r] ${rootdir}/Yokai-Watch-WW_${version}.apk
 
 if your device is connected to your computer.
 "
@@ -98,42 +101,40 @@ if your device is connected to your computer.
 
 }
 
+if ! which apktool ; then
+	apktool="${basedir}"/patcher/apktool
+else	apktool=$(which apktool)
+fi
+
 case ${1} in
 
-	*alt )	apktool=${basedir}/apktool
-		apktoolparams="-p ${basedir}/framework"
-		_build "${2}"	;;
-
-	*alt2 )	apktool=${basedir}/apktool
-		apktoolparams=""
-		_build "${2}"	;;
-
-	*.apk )	which apktool &>/dev/null || _error "apktool not installed!"
-		apktool=$(which apktool)
-		apktoolparams=""
+	*us )	patchdir=com.level5.ywwwus
 		_build "${1}"	;;
 
-	* )	echo -e "Yokai Watch Wibble Wobble (US) root patcher
+	*eu )	patchdir=com.level5.ywpeu
+		_build "${1}"	;;
+
+	* )	echo -e "Yokai Watch Wibble Wobble patcher
 
 version ${version} (${reldate})
 
-supported game versions:
-	1.1.1
+supported game versions
+	US		EU
+	1.1.1		1.0.2
 	1.2.0
 	1.2.1
 	1.2.2
 	2.0.0
 	2.0.1
 	2.0.2
+	2.1.0
+	2.1.1
 
 usage:
-	yokai-patcher		<yokaiwatch.apk>
-	yokai-patcher	--alt	<yokaiwatch.apk>
-	yokai-patcher	--alt2	<yokaiwatch.apk>
+	yokai-patcher	--us	<yokaiwatch.apk>
+	yokai-patcher	--eu	<yokaiwatch.apk>
 
 option:
-	--alt	[use supplied apktool with supplied framework]
-	--alt2	[use supplied apktool with default framework]
 	--help	[show this message]
 "	;;
 
