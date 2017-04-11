@@ -1,5 +1,15 @@
 # ChangeLog
 
+## 1.4.1
+- Yokai Watch Wibble Wobble (EU)
+  - Xposed override added
+  - added delta patches
+- Yokai Watch Wibble Wobble (US)
+  - added delta patches for
+    - version 2.1.0
+    - version 2.1.1
+- updated Yokai Watch Wibble Wobble doc
+
 ## 1.4.0
 - support Miitomo 2.2.0 @Nanolx
 - Yokai Watch Wibble Wobble (US) Patcher:

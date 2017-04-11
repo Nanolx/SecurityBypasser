@@ -6,6 +6,7 @@ anti-root checks run normally on your rooted devices or emulators.
 It supports the following games and applications:
 - Miitomo (since version 1.0.0)
 - Yokai Watch Wibble Wobble US (since version 1.0.7)
+- Yokai Watch Wibble Wobble EU (since version 1.4.1)
     - Requires additional steps, see [Yokai Watch setup docs](YokaiWatchWibbleWobble.md)
 - Amazon Flex (since Version 1.0.9)
 - Kingdom Hearts Unchained X (since version 1.1.1) [work-in-progress]

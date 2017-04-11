@@ -1,21 +1,18 @@
-Supporting Yokai Watch Wibble Wobble (US) was a rather hard task
+Supporting Yokai Watch Wibble Wobble (US/EU) was a rather tricky task
 and consists of two parts:
 
 - Xposed Override: The easy one, Xposed Module overrides checkRoot() and h()
 - Modified libSGF: The hard one, we need to remove all references to "su" from the libSGF library
 
-Supported versions of Yokai Watch Wibble Wobble (US) (automatic patcher):
-- 1.1.1
-
 ## Linux only: Automated modification of the libSGF library
 
-1. First download the YWWWUS apk file.
+1. First download the Wibble Wobble apk file.
 1. You need to have xdelta and zip installed.
 1. Using automated patcher:
     - In the directory [patcher](patcher) you'll find the script [yokai-patcher](patcher/yokai-patcher)
     - Execute it and give the name of the apk file as argument, for example:
 
-            ./patcher/yokai-patcher /home/user/YokaiWatchWibbleWobbleUS.apk
+            ./patcher/yokai-patcher /home/user/YokaiWatchWibbleWobble.apk
 
 1. If everything goes fine, the script will tell you that it succeeded and where
 the new Yokai-Root.apk is stored.
@@ -31,7 +28,7 @@ the new Yokai-Root.apk is stored.
 
 To modify the library there are three ways.
 
-1. But first download the YWWWUS apk file and extract it,  you'll find the library in
+1. But first download the Wibble Wobble apk file and extract it,  you'll find the library in
 
         <apkfilename>/lib/<architecture>/libSGF.so
 
@@ -62,11 +59,12 @@ To modify the library there are three ways.
     into the new apk.
 
 1. Copy this apk to your device and install.
-1. Now start Yokai Watch Wibble Wobble (US) on your rooted phone.
+1. Now start Yokai Watch Wibble Wobble on your rooted phone.
 
 
 #### A) Using xdelta patches
-In the directory patcher/delta/com.level5.ywwwus you'll find xdelta patches to be applied like:
+In the directory patcher/delta/com.level5.ywwwus you'll find xdelta patches for US version,
+in the directory patcher/delta/com.level5.ywpeu you'll find the xdelta patches for EU version
 
         xdelta3 -d -s -f <original-lib> <delta-patch> <modified-lib>
 
