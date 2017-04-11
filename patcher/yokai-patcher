@@ -101,7 +101,7 @@ if your device is connected to your computer.
 
 }
 
-if ! which apktool ; then
+if ! which apktool &>/dev/null ; then
 	apktool="${basedir}"/patcher/apktool
 else	apktool=$(which apktool)
 fi
@@ -135,6 +135,8 @@ usage:
 	yokai-patcher	--eu	<yokaiwatch.apk>
 
 option:
+	--us	[patch US version]
+	--eu	[patch EU version]
 	--help	[show this message]
 "	;;
 
