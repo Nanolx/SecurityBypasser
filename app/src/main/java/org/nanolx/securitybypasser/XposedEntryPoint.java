@@ -35,6 +35,7 @@ public class XposedEntryPoint implements IXposedHookLoadPackage
 		appRegistry.put("jp.gungho.padEN", PuzzlesAndDragonsEN.class);
 		appRegistry.put("jp.gungho.padHT", PuzzlesAndDragonsJP.class);
 		appRegistry.put("com.level5.ywwwus", YokaiWatchWW.class);
+		appRegistry.put("com.level5.ywpeu", YokaiWatchWWEU.class);
 	}
 
 	@Override
