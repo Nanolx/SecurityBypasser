@@ -14,7 +14,7 @@ _error () {
 
 _build () {
 
-	if [[ -f ${2} && ${2} == *.apk ]]; then
+	if [[ -f ${1} && ${1} == *.apk ]]; then
 
 		rm -rf "${rootdir}"/build-yokai
 
@@ -26,7 +26,7 @@ _build () {
 			fi
 		fi
 
-		source="${2}"
+		source="${1}"
 		sourceapk=$(basename "${source}")
 		sourcedir=$(basename "${source}" .apk)
 
@@ -109,10 +109,10 @@ fi
 case ${1} in
 
 	*us )	patchdir=com.level5.ywwwus
-		_build "${1}"	;;
+		_build "${2}"	;;
 
 	*eu )	patchdir=com.level5.ywpeu
-		_build "${1}"	;;
+		_build "${2}"	;;
 
 	* )	echo -e "Yokai Watch Wibble Wobble patcher
 
