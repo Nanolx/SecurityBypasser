@@ -14,7 +14,7 @@ _error () {
 
 _build () {
 
-	if [[ -f ${1} && ${1} == *.apk ]]; then
+	if [[ -f ${2} && ${2} == *.apk ]]; then
 
 		rm -rf "${rootdir}"/build-yokai
 
@@ -26,7 +26,7 @@ _build () {
 			fi
 		fi
 
-		source="${1}"
+		source="${2}"
 		sourceapk=$(basename "${source}")
 		sourcedir=$(basename "${source}" .apk)
 
@@ -96,7 +96,7 @@ copy to your device and install or issue
 
 if your device is connected to your computer.
 "
-	else	_error "file ${1} does not exist."
+	else	_error "file ${2} does not exist."
 	fi
 
 }
