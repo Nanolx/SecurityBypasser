@@ -45,6 +45,20 @@ public class AmazonFlex implements IXposedHookLoadPackage
 				}
 			});
 
+		XposedHelpers.findAndHookMethod("com.scottyab.rootbeer.RootBeerNative",
+			param.classLoader,
+			"checkForRoot",
+			new XC_MethodReplacement()
+			{
+				@Override
+				protected Object replaceHookedMethod(MethodHookParam param) throws Throwable
+				{
+					XposedBridge.log("Nanolx Security Bypasser: Amazon is trying to stop us, but I won't let it happen!");
+					XposedBridge.log("(com.scottyab.rootbeer.RootBeerNative.checkForRoot())");
+					return false;
+				}
+			});
+
 		XposedHelpers.findAndHookMethod("com.scottyab.rootbeer.RootBeer",
 			param.classLoader,
 			"checkSuExists",
