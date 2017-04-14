@@ -1,6 +1,6 @@
 #!/bin/bash
 
-version=1.6.0
+version=1.6.1
 reldate=2017/04/12
 
 basedir=$(readlink -m "${BASH_SOURCE[0]}")
@@ -21,8 +21,8 @@ _build () {
 		xdelta=$(which xdelta3)
 		if [[ ${xdelta} == "" ]]; then
 			if [[ $(uname -m) == "x86_64" ]]; then
-				xdelta="${basedir}"/patcher/xdelta3.64
-			else	xdelta="${basedir}"/patcher/xdelta3.32
+				xdelta="${basedir}"/xdelta3.64
+			else	xdelta="${basedir}"/xdelta3.32
 			fi
 		fi
 
@@ -102,7 +102,7 @@ if your device is connected to your computer.
 }
 
 if ! which apktool &>/dev/null ; then
-	apktool="${basedir}"/patcher/apktool
+	apktool="${basedir}"/apktool
 else	apktool=$(which apktool)
 fi
 
