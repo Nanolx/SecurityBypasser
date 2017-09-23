@@ -6,15 +6,18 @@ anti-root checks run normally on your rooted devices or emulators.
 It supports the following games and applications:
 - Miitomo (since version 1.0.0)
 - Yokai Watch Wibble Wobble US (since version 1.0.7)
+    - Requires additional steps, see [Yokai Watch setup docs](YokaiWatchWibbleWobble.md)
 - Yokai Watch Wibble Wobble EU (since version 1.4.1)
     - Requires additional steps, see [Yokai Watch setup docs](YokaiWatchWibbleWobble.md)
-- Amazon Flex (since Version 1.0.9)
-- Kingdom Hearts Unchained X (since version 1.1.1) [work-in-progress]
-- Puzzles & Dragons EN (since version 1.1.1)
-- Puzzles & Dragons JP (since version 1.3.0)
-- Monster Hunter Explore (since version 1.1.1)
-- HIT (since version 1.1.1) [work-in-progress]
-- Final Fantasy Brave Exvius (since version 1.1.1) [work-in-progress]
+
+It previously spported:
+- Amazon Flex
+- Kingdom Hearts Unchained X
+- Puzzles & Dragons EN
+- Puzzles & Dragons JP
+- Monster Hunter Explore
+- HIT
+- Final Fantasy Brave Exvius
 
 ### Basic Instructions
 1. Install Xposed Framework

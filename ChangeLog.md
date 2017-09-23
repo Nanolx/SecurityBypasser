@@ -1,5 +1,10 @@
 # ChangeLog
 
+## 1.5.0
+- signed with own key instead of test key
+  - you'll need to remove the old version before installing the new
+- support Miitomo 2.3.0
+
 ## 1.4.1
 - Yokai Watch Wibble Wobble (EU)
   - Xposed override added

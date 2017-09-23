@@ -18,14 +18,14 @@ public class Miitomo implements IXposedHookLoadPackage
 		XposedBridge.log("Nanolx Security Bypasser: Entering Miitomo... Ready... Set... GO!");
 		XposedHelpers.findAndHookMethod("jp.co.nintendo.SecureController",
 			param.classLoader,
-			"ZV",
+			"ZQ",
 			new XC_MethodReplacement()
 			{
 				@Override
 				protected Object replaceHookedMethod(MethodHookParam param) throws Throwable
 				{
 					XposedBridge.log("Nanolx Security Bypasser: Nintendo is trying to stop us, but I won't let it happen!");
-					XposedBridge.log("Hooked SecureController.ZV())");
+					XposedBridge.log("Hooked SecureController.ZQ())");
 					return null;
 				}
 			});
@@ -38,7 +38,7 @@ public class Miitomo implements IXposedHookLoadPackage
 
 		XposedHelpers.findAndHookMethod("jp.co.nintendo.SecureController",
 			param.classLoader,
-			"ZW",
+			"ZR",
 			new XC_MethodReplacement()
 			{
 				@Override
