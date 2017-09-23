@@ -4,6 +4,15 @@
 - signed with own key instead of test key
   - you'll need to remove the old version before installing the new
 - support Miitomo 2.3.0
+- Yokai Watch Wibble Wobble (US)
+  - added delta patches for
+    - version 2.2.0
+    - version 2.2.1
+- Yokai Watch Wibble Wobble (EU)
+  - added delta patches for
+    - version 1.0.3
+    - version 1.0.4
+    - version 2.0.0
 
 ## 1.4.1
 - Yokai Watch Wibble Wobble (EU)
