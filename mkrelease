@@ -3,12 +3,11 @@
 basedir=$(readlink -m ${BASH_SOURCE[0]})
 basedir=$(dirname ${basedir})
 
-version=1.0
-reldate=2016/05/22
+version=1.1
+reldate=2017/09/23
 
 build_opt=${basedir}/app/build.gradle
 build_apk=${basedir}/app/build/outputs/apk/app-release-unsigned.apk
-build_spk=${basedir}/app/build/outputs/apk/app-release-unsigned.s.apk
 
 _error () {
 	echo "${1}"
