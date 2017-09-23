@@ -34,8 +34,8 @@ _build_apk () {
 _sign_apk () {
 	if [[ ! -f ${build_apk} ]]; then
 		_error "run mkrelease --build first!"
-	else	${basedir}/patcher/apksign ${build_apk} || _error "signing Security Bypasser failed!"
-		cp ${build_spk} ${basedir}/SecurityBypasser-latest.apk
+	else	signapk ${build_apk} ${basedir}/SecurityBypasser-latest.apk \
+			|| _error "signing Security Bypasser failed!"
 	fi
 }
 
