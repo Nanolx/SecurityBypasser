@@ -19,7 +19,11 @@ It previously spported:
 - HIT
 - Final Fantasy Brave Exvius
 
-### Basic Instructions
+## Magisk
+
+If possible, use Magisk/Hide instead of this module
+
+## Basic Instructions
 1. Install Xposed Framework
 1. Install Security Bypasser:
     - Download SecurityBypasser-latest.apk from GitHub repository
@@ -28,7 +32,7 @@ It previously spported:
 1. Reboot device
 1. Enjoy your Game
 
-### Support Forums
+## Support Forums
 
 [XDA Developers (english)](http://forum.xda-developers.com/xposed/modules/xposed-miitomo-security-bypasser-t3377941)
 
