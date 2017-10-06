@@ -2,14 +2,7 @@ package org.nanolx.securitybypasser;
 
 import de.robv.android.xposed.IXposedHookLoadPackage;
 import de.robv.android.xposed.callbacks.XC_LoadPackage.LoadPackageParam;
-import org.nanolx.securitybypasser.apps.AmazonFlex;
-import org.nanolx.securitybypasser.apps.FFBraveExvius;
-import org.nanolx.securitybypasser.apps.HIT;
-import org.nanolx.securitybypasser.apps.KingdomHeartsUX;
 import org.nanolx.securitybypasser.apps.Miitomo;
-import org.nanolx.securitybypasser.apps.MonsterHunterExplore;
-import org.nanolx.securitybypasser.apps.PuzzlesAndDragonsEN;
-import org.nanolx.securitybypasser.apps.PuzzlesAndDragonsJP;
 import org.nanolx.securitybypasser.apps.YokaiWatchWW;
 import org.nanolx.securitybypasser.apps.YokaiWatchWWEU;
 
@@ -27,14 +20,7 @@ public class XposedEntryPoint implements IXposedHookLoadPackage
 		// Load up our registry with the hook handlers
 		// Note: These package names must be lowercase.
 		appRegistry = new HashMap<String, Class<? extends IXposedHookLoadPackage>>();
-		appRegistry.put("com.amazon.rabbit", AmazonFlex.class);
-		appRegistry.put("com.square_enix.android_googleplay.ffbeww", FFBraveExvius.class);
-		appRegistry.put("com.nexon.hit.global", HIT.class);
-		appRegistry.put("com.square_enix.android_googleplay.khuxww", KingdomHeartsUX.class);
 		appRegistry.put("com.nintendo.zaaa", Miitomo.class);
-		appRegistry.put("jp.co.capcom.android.explore", MonsterHunterExplore.class);
-		appRegistry.put("jp.gungho.padEN", PuzzlesAndDragonsEN.class);
-		appRegistry.put("jp.gungho.padHT", PuzzlesAndDragonsJP.class);
 		appRegistry.put("com.level5.ywwwus", YokaiWatchWW.class);
 		appRegistry.put("com.level5.ywpeu", YokaiWatchWWEU.class);
 	}
